@@ -8,7 +8,7 @@ int main() {
     std::cin >> n >> q;
     std::vector<std::vector<int>> myVector;
 
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i <= n; i++) {
 
         std::string line;
         std::getline(std::cin, line);
@@ -25,5 +25,5 @@ int main() {
     }
     std::cout << myVector[1][2] << std::endl;
     return 0;
-}
+}na
 
