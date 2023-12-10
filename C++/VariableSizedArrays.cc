@@ -1,29 +1,32 @@
 #include <iostream>
-#include <sstream>
 #include <vector>
-#include <string>
 
 int main() {
     int n, q;
     std::cin >> n >> q;
-    std::vector<std::vector<int>> myVector;
 
-    for(int i = 0; i <= n; i++) {
+    std::vector<std::vector<int>> arrays(n);
 
-        std::string line;
-        std::getline(std::cin, line);
-        std::istringstream iss(line);
-
-        std::vector<int> innerVector;
-
-        int number;
-
-        while (iss >> number) {
-            innerVector.push_back(number);
+    for (int i = 0; i < n; i++) {
+        int k;
+        std::cin >> k;
+        arrays[i].resize(k);
+        for (int j = 0; j < k; j++) {
+            std::cin >> arrays[i][j];
         }
-        myVector.push_back(innerVector);
     }
-    std::cout << myVector[1][2] << std::endl;
-    return 0;
-}na
 
+    std::vector<int> results;
+
+    for (int i = 0; i < q; i++) {
+        int arrayIndex, elementIndex;
+        std::cin >> arrayIndex >> elementIndex;
+        results.push_back(arrays[arrayIndex][elementIndex]);
+    }
+
+    for (int result : results) {
+        std::cout << result << std::endl;
+    }
+
+    return 0;
+}
