@@ -13,13 +13,18 @@ public:
 private:
     int bedrooms_;
     int bathrooms_;
-}; // Sınıf tanımının sonuna noktalı virgül
+};
 
 class HotelApartment : public HotelRoom {
 public:
-    // Yapıcı ve diğer metodlar buraya eklenecek
+    HotelApartment(int bedrooms, int bathrooms)
+        : HotelRoom(bedrooms, bathrooms){}
+
+    int get_price() const {
+        return HotelRoom::get_price() + 100;
+    }
 };
 
 int main() {
-    // main fonksiyonun içeriği
+
 }
